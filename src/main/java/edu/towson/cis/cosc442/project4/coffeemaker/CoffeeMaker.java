@@ -70,8 +70,8 @@ public class CoffeeMaker {
         if (r != null) {
             for (int i = 0; i < NUM_RECIPES; i++) {
                 if (r.equals(recipeArray[i])) {
-                    //added a new recipe to replace the deleted one, so that the array is not empty
-                    //lines 74 and 75
+                    // added a new recipe to replace the deleted one, so that the array is not empty
+                    // lines 74 and 75
                     recipeArray[i] = new Recipe();
                     recipeFull[i] = false;
                     canDeleteRecipe = true;
@@ -89,20 +89,15 @@ public class CoffeeMaker {
      * @return true if the recipe was successfully edited, false otherwise
      */
     public boolean editRecipe(Recipe oldRecipe, Recipe newRecipe) {
-        boolean canEditRecipe = false;
         for (int i = 0; i < NUM_RECIPES; i++) {
-            if (recipeArray[i].getName() != null) {
-                if (newRecipe.equals(recipeArray[i])) {
-                    recipeArray[i] = new Recipe();
-                    if (addRecipe(newRecipe)) {
-                        canEditRecipe = true;
-                    } else {
-                        canEditRecipe = false;
-                    }
-                }
+            if (recipeFull[i] && oldRecipe.equals(recipeArray[i])) {
+                // Editing must keep the original recipe name.
+                newRecipe.setName(recipeArray[i].getName());
+                recipeArray[i] = newRecipe;
+                return true;
             }
         }
-        return canEditRecipe;
+        return false;
     }
 
     /**
