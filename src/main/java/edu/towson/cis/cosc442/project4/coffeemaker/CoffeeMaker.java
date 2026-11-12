@@ -4,7 +4,7 @@ public class CoffeeMaker {
     /** Array of recipes in coffee maker */
     private Recipe[] recipeArray;
     /** Number of recipes in coffee maker */
-    private final int NUM_RECIPES = 4;
+    private final int NUM_RECIPES = 3;
     /** Array describing if the array is full */
     private boolean[] recipeFull;
     /** Inventory of the coffee maker */
