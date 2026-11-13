@@ -133,11 +133,7 @@ public class Recipe {
      * @param price The price to set.
      */
     public void setPrice(int price) {
-        if (price >= 0) {
-            this.price = price;
-        } else {
-            this.price = 0;
-        }
+        this.price = Math.max(0, price);
     }
 
     /**
