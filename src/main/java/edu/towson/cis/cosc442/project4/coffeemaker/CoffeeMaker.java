@@ -153,7 +153,8 @@ public class CoffeeMaker {
         }
         if (canMakeCoffee) {
             //subtracting the coffee used to make the drink
-            inventory.setCoffee(inventory.getCoffee() - r.getAmtCoffee());
+            //deliberate fault for task 4
+            inventory.setCoffee(inventory.getCoffee() + r.getAmtCoffee());
             inventory.setMilk(inventory.getMilk() - r.getAmtMilk());
             inventory.setSugar(inventory.getSugar() - r.getAmtSugar());
             inventory.setChocolate(inventory.getChocolate() - r.getAmtChocolate());
