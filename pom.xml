@@ -49,6 +49,7 @@
              <excludedClasses>
    		<param>edu.towson.cis.cosc442.project4.coffeemaker.Main</param>
     	     </excludedClasses>
+             <mutationThreshold>80</mutationThreshold>
 
          </configuration>
 
